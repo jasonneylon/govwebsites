@@ -1,0 +1,27 @@
+%h2 table to websites
+%table
+	%thead
+	%td Website
+	%td Department
+	%td Visits
+	%td Strategy and planning costs
+	%td Design and build costs
+	%td Hosting and infrastructure costs
+	%td Content provision costs
+	%td Testing and evaluation costs
+	%td Total costs (excl staff)
+	%td Total costs per visit
+	%td Staff costs
+	= @websites.each do | website|
+		%tr
+			%td=website["website"]
+			%td=website["department"]
+			%td=website["visits_apr_09_to_mar_10"].to_display
+			%td=website["strategy_and_planning_costs"].to_money
+			%td=website["design_and_build_costs"].to_money
+			%td=website["hosting_and_infrastructure_costs"].to_money
+			%td=website["content_provision_costs"].to_money
+			%td=website["testing_and_evaluation_costs"].to_money
+			%td=website["total_costs_excl_staff"].to_money
+			%td=website["total_costs_per_visit"].to_money
+			%td=website["staff_costs"].to_money
