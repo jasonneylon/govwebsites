@@ -14,7 +14,8 @@
 	%tbody
 		= @websites.each do | website|
 			%tr
-				%td=website["website"]
+				%td
+					%a{:href=>"http://www." + website["website"]}=website["website"]
 				%td=website["department"]
 				%td=website["visits_apr_09_to_mar_10"].to_display
 				%td=website["strategy_and_planning_costs"].to_money
